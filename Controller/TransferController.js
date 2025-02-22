@@ -80,4 +80,4 @@ const processTransfer = async (req, res) => {
 };
 
 
-export default processTransfer;
+export { processTransfer };
