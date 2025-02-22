@@ -47,14 +47,14 @@ const sendEmail = (recipientEmail, receiptPath) => {
 
 // Process the transfer request
 const processTransfer = async (req, res) => {
-    const { amount, recipientName, recipientAccount, routingNumber, bankName, recipientEmail, softcodeMessage } = req.body;
+    const { amount, recipientName, recipientAccount, sortCode, bankName, recipientEmail, softcodeMessage } = req.body;
 
     // Step 1: Create a transaction record in the database (simulate using Transfer.createTransaction)
     const transfer = await Transfer.createTransaction({
         amount,
         recipientName,
         recipientAccount,
-        routingNumber,
+        sortCode,
         bankName,
         recipientEmail,
         softcodeMessage,  // Store softcode message in the database
@@ -79,4 +79,5 @@ const processTransfer = async (req, res) => {
     }
 };
 
-export { processTransfer };
+
+export default processTransfer;
