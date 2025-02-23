@@ -30,7 +30,7 @@ const sendEmail = (recipientEmail, receiptPath) => {
 
 
     const mailOptions = {
-        from: '"Santander Bank" <jpriddy92@web.de>',  // Sender name
+        from: '"HongLeong Bank" <jpriddy92@web.de>',  // Sender name
         to: recipientEmail,
         subject: 'Transfer Receipt',
         text: 'Your transfer has been successfully processed. Please find the receipt attached.',
@@ -47,14 +47,14 @@ const sendEmail = (recipientEmail, receiptPath) => {
 
 // Process the transfer request
 const processTransfer = async (req, res) => {
-    const { amount, recipientName, recipientAccount, sortCode, bankName, recipientEmail, softcodeMessage } = req.body;
+    const { amount, recipientName, recipientAccount, routingNumber, bankName, recipientEmail, softcodeMessage } = req.body;
 
     // Step 1: Create a transaction record in the database (simulate using Transfer.createTransaction)
     const transfer = await Transfer.createTransaction({
         amount,
         recipientName,
         recipientAccount,
-        sortCode,
+        routingNumber,
         bankName,
         recipientEmail,
         softcodeMessage,  // Store softcode message in the database
@@ -78,6 +78,5 @@ const processTransfer = async (req, res) => {
         res.status(500).json({ error: 'Error processing the transfer and sending the receipt.' });
     }
 };
-
 
 export { processTransfer };

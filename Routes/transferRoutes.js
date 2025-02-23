@@ -1,6 +1,6 @@
 // routes/transferRoutes.js
 import express from 'express';
-import processTransfer from '../Controller/TransactionController.js';
+import { processTransfer } from '../controller/TransferController.js';
 
 const router = express.Router();
 

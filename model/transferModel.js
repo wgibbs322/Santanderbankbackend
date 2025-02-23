@@ -1,9 +1,9 @@
 class Transfer {
-    constructor({ amount, recipientName, recipientAccount, sortCode, bankName, recipientEmail, status, softcodeMessage = '' }) {
+    constructor({ amount, recipientName, recipientAccount, routingNumber, bankName, recipientEmail, status, softcodeMessage = '' }) {
         this.amount = amount;
         this.recipientName = recipientName;
         this.recipientAccount = recipientAccount;
-        this.sortCode = sortCode;
+        this.routingNumber = routingNumber;
         this.bankName = bankName;
         this.recipientEmail = recipientEmail;
         this.status = status;
